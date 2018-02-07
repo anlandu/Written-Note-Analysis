@@ -5,6 +5,4 @@ This file contains daily changes/commits
 
 1/30 Created CHANGELOG.md
 
-1/06 Downloaded OpenCV 
-
 1/07 updated README.md
