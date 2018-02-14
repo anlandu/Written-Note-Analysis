@@ -5,7 +5,21 @@ except ModuleNotFoundError:
 import pytesseract
 import sys
 pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files (x86)/Tesseract-OCR/tesseract'
-try:
-    print(pytesseract.image_to_string(Image.open(sys.argv[1])))
-except:
-    print("File not found")
+from wand.image import Image
+class GetText:
+    def getText(filename):
+        if ".jpeg" in filename or ".jpg" in filename:
+            try:
+                print(pytesseract.image_to_string(Image.open(filename)))
+            except:
+                print("File not found")
+        elif ".pdf" in filename:
+            try:
+                image_pdf = Image(filename=filename, resolution=300)
+                image_jpeg = image_pdf.convert('jpeg')
+                for img in image_jpeg.sequence:
+                    img_page = Image(image=img)
+                    req_image.append(img_page.make_blob('jpeg'))
+                    print(pytesseract.image_to_string(Image.open(image_jpeg)))
+            except:
+                print("File not found")
