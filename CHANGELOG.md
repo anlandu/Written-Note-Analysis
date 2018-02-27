@@ -20,13 +20,12 @@ Updated CHANGELOG.MD and README.md.
 ## 2/9
 Decided on Written-Note-Analysis, a project that will combine computer vison, character recognition, and text analysis to read notes and analyze the subject.
 
-##2/11
+## 2/11
 Updated README.md in preparation for non-sibi project week.  
 
 ## 2/12-16
 Non Sibi Week
 Side Note: 2/ 13: Talked to Dr.Z about project. Official plan is to use OpenCV to computer vision,use tesseract to recognize characters, and nltk to analyze the text
--------------
 
 ## 2/19-20
 Downloaded and tested tesseract with added files.
