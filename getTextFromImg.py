@@ -14,12 +14,11 @@ class GetText:
             except:
                 print("File not found")
         elif ".pdf" in filename:
-            try:
-                image_pdf = Image(filename=filename, resolution=300)
+            with Image(filename="output.jpeg", resolution=300) as image_jpeg:
+                image_jpeg.compression_quality = 99
                 image_jpeg = image_pdf.convert('jpeg')
+                # for each page, convert that page to an image and append to blob
                 for img in image_jpeg.sequence:
                     img_page = Image(image=img)
                     req_image.append(img_page.make_blob('jpeg'))
                     print(pytesseract.image_to_string(Image.open(image_jpeg)))
-            except:
-                print("File not found")

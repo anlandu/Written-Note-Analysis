@@ -1,2 +1,3 @@
 pip install tesseract
 pip install wand
+pip install git+https://github.com/anlandu/histtext
